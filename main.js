@@ -1,5 +1,5 @@
 // Get variable names
-let search_input = document.getElementById('search_color').toLowerCase();
+let search_input = document.getElementById('search_color');
 let colors_list = document.getElementById('colors_list');
 let loading_animation = document.getElementById('loading');
 
@@ -27,7 +27,7 @@ const debounce = (fn, delay)=>{
 
 search_input.addEventListener("keyup", debounce(()=>{
     if(search_input.value.length>2){
-      showSelectedColors(search_input.value);
+      showSelectedColors(search_input.value.toLowerCase());
     }
     if(search_input.value.length===0){
       showRandomColors(20);
