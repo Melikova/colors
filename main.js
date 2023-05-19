@@ -1,5 +1,5 @@
 // Get variable names
-let search_input = document.getElementById('search_color');
+let search_input = document.getElementById('search_color').toLowerCase();
 let colors_list = document.getElementById('colors_list');
 let loading_animation = document.getElementById('loading');
 
