@@ -27,7 +27,7 @@ const debounce = (fn, delay)=>{
 
 search_input.addEventListener("keyup", debounce(()=>{
     if(search_input.value.length>2){
-      showSelectedColors(search_input.value.toLowerCase());
+      showSelectedColors(search_input.value);
     }
     if(search_input.value.length===0){
       showRandomColors(20);
@@ -82,7 +82,7 @@ function showSelectedColors(input_value){
   colors_list.innerHTML='';
   fetchColors()
     .then(data=>{
-      getFilteredArrayFromData(data, input_value).forEach(element => {
+      getFilteredArrayFromData(data, input_value.toLowerCase()).forEach(element => {
         colors_list.innerHTML+=`<div class="col">
                           <div class="card h-100 border-0 p-0 shadow" style="background-color:${element.hex}">
                             <div class="card-body rounded-top" style="background-color:${element.hex}">
