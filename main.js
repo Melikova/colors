@@ -100,6 +100,19 @@ function showSelectedColors(input_value){
     .catch(err=>console.log(err));
 }
 
+// copy hex data to clipboard
+colors_list.addEventListener("click", (event) => {
+    const card = event.target.closest(".card");
+    if (card){
+      let text = card.querySelector('.card-footer>.text-muted').innerHTML;
+      copyToClipboard(text);
+    }
+})
 
+function copyToClipboard(text) {
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(text);
 
-
+  // Alert the copied text
+  alert("Hex copied to clipboard: " + text);
+}
