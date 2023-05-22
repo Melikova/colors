@@ -1,2 +1,4 @@
 # colors_hex
-async/await + debounce
+- async/await
+- debounce
+- event delegation
